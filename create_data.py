@@ -1,6 +1,7 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-def spiral(points, classes):
+def create_data(points, classes):
     X = np.zeros((points * classes, 2))
     y = np.zeros(points * classes, dtype='uint8')
     
@@ -12,3 +13,12 @@ def spiral(points, classes):
         y[ix] = class_number
     
     return X, y
+
+print("here")
+X,y = create_data(100,3)
+
+plt.scatter(X[:0], X[:1])
+plt.show()
+
+plt.scatter(X[:0], X[:1], c=y, cmap="brg")
+plt.show()
