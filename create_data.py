@@ -1,6 +1,6 @@
 import numpy as np
 
-def create_data(points, classes):
+def spiral(points, classes):
     X = np.zeros((points * classes, 2))
     y = np.zeros(points * classes, dtype='uint8')
     

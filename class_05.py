@@ -1,6 +1,7 @@
 import numpy as np
+import nnfs
 
-np.random.seed(0)
+nnfs.init()
 
 X = [[1,2,3,2.5],[2.0,5.0,-1.0,2.0],[-1.5,2.7,3.3,-0.8]] # the outputs of the four neurons in the previous layer, now with batching! Each batch is a single input to the network
 
