@@ -15,4 +15,3 @@ norm_values = exp_values / np.sum(exp_values)
 
 print("normalized exponentiated values:", norm_values)
 print("sum of normalized values:", sum(norm_values))
-
