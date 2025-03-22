@@ -47,3 +47,18 @@ dense2.forward(activation1.output)
 activation2.forward(dense2.output)
 
 print(activation2.output[:5]) # print the first 5 samples
+
+
+'''
+[[0.33333334 0.33333334 0.33333334]
+ [0.33331734 0.3333183  0.33336434]
+ [0.3332888  0.33329153 0.33341965]
+ [0.33325943 0.33326396 0.33347666]
+ [0.33323312 0.33323926 0.33352762]]
+'''
+# This is the output of the network. Each row is a sample, and each column is a class.
+# We're looking at a probability distribution, so the values in each row should sum to 1.
+# The values are close to 0.33 because we have 3 classes, so the network is guessing randomly.
+
+# What we need to do from here is to add a loss function to the network, so we can train it to make better guesses.
+# We'll do that in the next lesson.
