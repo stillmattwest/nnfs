@@ -1,6 +1,6 @@
 import numpy as np
 import nnfs
-from nnfs.datasets import vertical_data
+from nnfs.datasets import vertical_data, spiral_data
 from nn_template_01 import (
     Layer_Dense,
     Activation_ReLU,
@@ -11,9 +11,12 @@ from nn_template_01 import (
 nnfs.init()
 
 # create data
-training_X, training_y = vertical_data(samples=100, classes=3)
+# training_X, training_y = vertical_data(samples=100, classes=3)
 
-test_X, test_y = vertical_data(samples=200, classes=3)
+# test_X, test_y = vertical_data(samples=200, classes=3)
+
+training_X, training_y = spiral_data(samples=100, classes=3)
+test_X, test_y = spiral_data(samples=200, classes=3)
 
 # print(X[:10])
 # print(y[:10])
@@ -37,7 +40,7 @@ best_dense2_biases = dense2.biases.copy()
 
 def train(X, y):
     global dense1, dense2, activation1, activation2, loss_function, lowest_loss, best_dense1_weights, best_dense1_biases, best_dense2_weights, best_dense2_biases
-    for iteration in range(5000):
+    for iteration in range(50000):
         # Update weights with some small random values
         dense1.weights += np.random.uniform(
             -0.05, 0.05, size=dense1.weights.shape
